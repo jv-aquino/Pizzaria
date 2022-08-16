@@ -7,17 +7,32 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/dist/favicon.ico">
   <link rel="stylesheet" href="./dist/style.css">
-  <title>Pizzaria 085</title>
+  <title>Pizzaria do 085</title>
 </head>
 <body>
+  <div class="form-container">
+    <form>
+      <h2 class="font-bold text-3xl">Login</h2>
+
+      <input type="email" placeholder="Email" id="email" name="email" maxlength="80" required>
+      <input type="password" placeholder="Senha" id="senha" name="senha" maxlength="80" required>
+
+      <button type="submit" id="login-button">Login</button>
+      <button type="button" id="cancel">Cancelar</button>
+    </form>
+  </div>
   <div class="container">
-    <nav class="sticky flex justify-between items-center bg-purple-800 text-slate-50">
-      <h1 class="font-bold text-4xl italic">Pizzaria 085</h1>
+    <nav class="flex justify-between items-center bg-purple-800 text-slate-50">
+      <div class="flex items-center gap-5">
+        <img src="./dist/logo.png" alt="Logo" class="logo">
+        <h1 class="font-bold text-4xl italic">Pizzaria do 085</h1>
+      </div>
       <ul class="flex text-xl font-bold">
-        <li><a href="">Home</a></li>
+        <li><a href="./index.html">Home</a></li>
         <li><a href="">Cardápio</a></li>
-        <li><a href="">Login</a></li>
+        <li id="login">Login</li>
         <li><a href="">Pedidos</a></li>
       </ul>
     </nav>
@@ -35,5 +50,7 @@
 
     </footer>
   </div>
+
+  <script src="./dist/index.js"></script>
 </body>
 </html>

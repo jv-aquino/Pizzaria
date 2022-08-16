@@ -1,10 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Lato&display=swap');
+
+:root {
+  --white-custom: #fbfbfd;
+  --black-custom: #18181b;
+  --green-custom: #15f366;
+  --form-padding-side: 40px;
+}
 
 * {
   font-family: 'Lato', sans-serif;
+  outline: none;
 }
 body {
   overflow-x: hidden;
@@ -14,8 +21,9 @@ h1 {
   font-family: 'Oleo Script Swash Caps', cursive;
 }
 nav {
-  padding: 17px 40px;
+  padding: 12px 45px;
   width: 100vw;
+  position: fixed;
 }
 li {
   padding: 10px;
@@ -24,6 +32,7 @@ main {
   width: 100%;
 }
 h2 {
+  margin-top: 5.5rem;
   padding: 20px;
 }
 li {
@@ -60,4 +69,87 @@ li:hover {
 }
 .c4 {
   grid-area: c4;  
+}
+.logo {
+  height: 67px;
+  width: auto;
+}
+
+.form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  
+  background-color: rgba(5, 10, 5, 0.61);
+
+  display: none;
+  align-items: center; 
+}
+
+form {
+  background-color: var(--white-custom);
+  border-radius: 5px;
+
+  display: grid;
+  padding: 35px var(--form-padding-side);
+}
+form > * {
+  margin: 9px;
+}
+form h2 {
+  font-size: 1.6rem;
+  padding: 0 0 3px;
+}
+form input {
+  background-color: var(--white-custom);
+  padding: 5px 2px 3px;
+
+  border: none;
+  border-bottom: 1px solid var(--black-custom);
+  transition: .7s;
+}
+.validCheck:invalid {
+  border-bottom-color: #ef4444;
+}
+.validCheck:valid {
+  border-bottom-color: var(--green-custom);
+}
+form ::placeholder,
+form label,
+form input,
+form button {
+  font-size: 1.35rem;
+}
+form button {
+  background-color: var(--green-custom);
+  padding: 8px;
+  margin: 7px;
+
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  transition: .5s;
+}
+.visible {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+#login-button {
+  background-color: var(--green-custom);
+  color: var(--white-custom);
+}
+#login-button:hover {
+  color: var(--black-custom);
+}
+#cancel {
+  background-color: var(--black-custom);
+  color: var(--white-custom);
+}
+#cancel:hover {
+  color: #ef4444;
 }
