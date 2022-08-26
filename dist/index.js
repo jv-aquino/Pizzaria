@@ -1,27 +1,49 @@
 const login = document.querySelector('#login');
 const form = document.querySelector('.form-container');
-const cancelButton = document.querySelector('#cancel');
+const cancelButton = document.querySelector('#cancel-form');
 
 const email = document.querySelector('#email');
 const senha = document.querySelector('#senha');
 
 let inputs = document.querySelectorAll(".form-container input");
-console.log(inputs);
 
-login.addEventListener('click', showForm);
+if (!logged) {
+  login.addEventListener('click', showForm);
+}
+
 cancelButton.addEventListener('click', cancelForm);
 
-function showForm() {
-  form.classList.add('visible');
+const logoutForm = document.querySelector('.logout-container');
+const cancelLogout = document.querySelector('#cancel-logout');
+const confirmLogout = document.querySelector('#logout');
+
+if (logged) {
+  const logoutButton = document.querySelector("#logoutShow");
+  logoutButton.addEventListener("click", showForm);
 }
-function cancelForm() {
-  form.classList.remove('visible');
+cancelLogout.addEventListener('click', cancelForm);
 
-  clearInputs();
+function showForm(e) {
+  if (e.target.id == 'login') {
+    form.classList.add('visible');
+  }
+  else {
+    logoutForm.classList.add('visible');
+  }
+}
+function cancelForm(e) {
+  if (e.target.id == 'cancel-form') {
+    form.classList.remove('visible');
 
-  inputs.forEach(input => {
-    unsetValidity(input)
-  });
+    clearInputs();
+
+    inputs.forEach(input => {
+      unsetValidity(input)
+    });
+  }
+  else {
+    logoutForm.classList.remove('visible');
+  }
 }
 function clearInputs() {
   senha.value = email.value = '';

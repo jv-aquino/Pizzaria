@@ -21,7 +21,7 @@ h1 {
   font-family: 'Oleo Script Swash Caps', cursive;
 }
 nav {
-  padding: 12px 45px;
+  padding: 11px 45px;
   width: 100vw;
   position: fixed;
 }
@@ -29,7 +29,7 @@ li {
   padding: 10px;
 }
 main {
-  width: 100%;
+  width: 100vw;
 }
 h2 {
   margin-top: 5.5rem;
@@ -52,8 +52,8 @@ li:hover {
   grid-template-areas: "c1 c2" "c1 c3" "c4 c4";
   gap: 11px;
 
-  height: 55vw;
-  width: 75%;
+  height:  max(58vw, 400px);
+  width: min(85%, 1000px);
 }
 .layout > div {
   border-radius: 10px;
@@ -75,7 +75,8 @@ li:hover {
   width: auto;
 }
 
-.form-container {
+.form-container,
+.logout-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -127,7 +128,7 @@ form button {
 form button {
   background-color: var(--green-custom);
   padding: 8px;
-  margin: 7px;
+  margin: 15px 7px 2px;
 
   font-weight: bold;
   border: none;
@@ -139,17 +140,17 @@ form button {
   align-items: center;
   justify-content: center;
 }
-#login-button {
+.logar {
   background-color: var(--green-custom);
   color: var(--white-custom);
 }
-#login-button:hover {
+.logar:hover {
   color: var(--black-custom);
 }
-#cancel {
+.cancel {
   background-color: var(--black-custom);
   color: var(--white-custom);
 }
-#cancel:hover {
+.cancel:hover {
   color: #ef4444;
 }
