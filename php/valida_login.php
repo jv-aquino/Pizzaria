@@ -15,7 +15,6 @@
 
     if($count == 1) {
       $_SESSION['email'] = $email;
-      $_SESSION['email_login'] = $email;
       $_SESSIO['logado'] = 'logado';
       
       header("location:../index.php");

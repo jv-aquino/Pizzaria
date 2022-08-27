@@ -20,8 +20,8 @@
     <form action="" method="POST">
       <h2 class="font-bold text-3xl">Login</h2>
 
-      <input type="email" placeholder="Email" id="email" name="email" maxlength="80" required>
-      <input type="password" placeholder="Senha" id="senha" name="senha" maxlength="80" required>
+      <input type="email" placeholder="Email  - a@a" id="email" name="email" maxlength="80" required>
+      <input type="password" placeholder="Senha - 123" id="senha" name="senha" maxlength="80" required>
 
       <button type="submit" class='logar' id="login-show">Login</button>
       <button type="button" class='cancel' id="cancel-form">Cancelar</button>
@@ -36,23 +36,21 @@
       <button type="button" class="cancel" id="cancel-logout">Não</button>
     </form>
   </div>
-  <div class="container">
     <nav class="flex justify-between items-center bg-purple-800 text-slate-50">
       <div class="flex items-center gap-5">
         <img src="./dist/logo.png" alt="Logo" class="logo">
         <h1 class="font-bold text-4xl italic">Pizzaria do 085</h1>
       </div>
       <ul class="flex text-xl font-bold">
-        <li><a href="#">Home</a></li>
+        <li><a href="./index.php">Home</a></li>
         <?php 
           if (!isset($_SESSION['logado'])) {         
-              echo '<li id="login">Login</li>
-              <li id="cadastro">Cadastro</li>';
+              echo '<li id="login">Login</li>';
 
               echo '<script>var logged = false;</script>';
           }
           else {
-            echo '<li id="pedir">Pedir</li>
+            echo '<li><a href="./pedir.php">Pedir</a></li>
             <li id="logoutShow">Logout</li>';
 
             echo '<script>var logged = true;</script>';
@@ -63,17 +61,16 @@
     <main class="flex items-center flex-col mb-14">
       <h2 class="mb-1 font-bold text-3xl text-slate-900">Peça já e receba em até <span class="italic text-purple-800">30 minutos</span></h2>
       <div class="layout grid">
-        <div class="c1 bg-red-500"></div>
-        <div class="c2 bg-emerald-700"></div>
-        <div class="c3 bg-slate-700"></div>
-        <div class="c4 bg-blue-700"></div>
+        <div class="c1 pedir"><img src="./dist/img/c1.png" alt="Combo 1"></div>
+        <div class="c2 pedir"><img src="./dist/img/c2.png" alt="Combo 2"></div>
+        <div class="c3 pedir"><img src="./dist/img/c3.png" alt="Combo 3"></div>
+        <div class="c4 pedir"><img src="./dist/img/c4.png" alt="Combo 4"></div>
       </div>
       
     </main>
     <footer>
 
     </footer>
-  </div>
   <script src="./dist/index.js"></script>
 </body>
 </html>
