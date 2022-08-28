@@ -176,10 +176,29 @@ form button {
 .form-pedido select {
   border: 1px solid var(--black-custom);
 }
+.form-pedido #items {
+  margin-bottom: 0;
+  display: grid;
+  gap: 10px;
+}
+.form-pedido #addItem {
+  margin-bottom: 0;
+  margin-top: 8px;
+  padding: 3px;
+}
+.form-pedido #removeItem {
+  padding: 3px;
+  margin-top: 1px;
+}
 .form-pedido > input {
   width: min(95%, 500px);
   margin-top: 0;
 }
 .form-pedido label {
-  margin-bottom: 4px;
+  margin-bottom: 3px;
+}
+
+.h2-comprar {
+  padding-top: 7rem;
+  text-align: center;
 }

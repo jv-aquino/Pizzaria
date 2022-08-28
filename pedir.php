@@ -76,10 +76,10 @@
         ?>
       </ul>
     </nav>
-    <form action="./php/valida_comprar.php" class="m-auto grid justify-center mb-14 form-pedido">
+    <form action="./php/valida_comprar.php" method="POST" class="m-auto grid justify-center mb-14 form-pedido">
       <h2 class="font-bold">Faça seu pedido</h2>
-      <div class="itens">
-        <select class="text-black" name="produto" required>
+      <div id="items">
+        <select class="text-black" name="1" required>
             <optgroup label="Pizza Pequena">
               <option value="1">Pizza P de Mussarela - 25$</option>
               <option value="2">Pizza P de Calabresa - 25$</option>
@@ -101,11 +101,16 @@
               <option value="12">Água 510ml - 3$</option>
             </optgroup>
         </select>
+
       </div>
-      <label for="endereco">Endereço</label><input type="text" placeholder="Bairro Retiro, Rua 52, n°4" name="endereco" id="endereco" class="validCheck" minlength="10" required>
+      <input type="hidden" name="nmrItems" id="nmr" value="1">
+      <button type="button" id="addItem">+ Adicionar produto</button>
+      <button type="button" id="removeItem">- Remover produto</button>
+      <label for="endereco" class="font-bold">Endereço</label><input type="text" placeholder="Bairro Retiro, Rua 52, n°4" name="endereco" id="endereco" class="validCheck" minlength="10" required>
 
       <button type="submit" class='logar'>Pedir</button>
     </form>
   </div>
+  <script src="./dist/addSelect.js"></script>
 </body>
 </html>
